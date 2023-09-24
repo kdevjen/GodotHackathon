@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://1ccnxc3vks5w"]
+
+[ext_resource type="Script" path="res://GameScript.gd" id="1_ujyrq"]
+
+[sub_resource type="Theme" id="Theme_0bsvl"]
+default_base_scale = 1.5
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_ujyrq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+offset_left = 8.0
+offset_top = 2.0
+offset_right = 1138.0
+offset_bottom = 664.0
+metadata/_edit_lock_ = true
+
+[node name="blue_button" type="Button" parent="."]
+self_modulate = Color(0.0431373, 1, 1, 1)
+offset_left = 74.0
+offset_top = 128.0
+offset_right = 274.0
+offset_bottom = 278.0
+text = "1"
+
+[node name="ColorRect" type="ColorRect" parent="blue_button"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 150.0
+color = Color(0, 1, 1, 0.568627)
+
+[node name="green_button" type="Button" parent="."]
+modulate = Color(0, 1, 0.235294, 1)
+offset_left = 397.0
+offset_top = 126.0
+offset_right = 597.0
+offset_bottom = 276.0
+text = "2"
+
+[node name="ColorRect" type="ColorRect" parent="green_button"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 150.0
+
+[node name="red_button" type="Button" parent="."]
+modulate = Color(1, 0.141176, 0.0117647, 1)
+offset_left = 723.0
+offset_top = 128.0
+offset_right = 923.0
+offset_bottom = 278.0
+theme = SubResource("Theme_0bsvl")
+text = "3"
+
+[node name="ColorRect" type="ColorRect" parent="red_button"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 150.0
+
+[node name="yellow_button" type="Button" parent="."]
+modulate = Color(1, 1, 0, 1)
+offset_left = 267.0
+offset_top = 353.0
+offset_right = 467.0
+offset_bottom = 503.0
+text = "4"
+
+[node name="ColorRect" type="ColorRect" parent="yellow_button"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 150.0
+
+[node name="purple_button" type="Button" parent="."]
+modulate = Color(0.682353, 0, 1, 1)
+offset_left = 611.0
+offset_top = 353.0
+offset_right = 811.0
+offset_bottom = 503.0
+text = "5"
+
+[node name="ColorRect" type="ColorRect" parent="purple_button"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 150.0
+
+[node name="Window" type="Window" parent="."]
+initial_position = 1
+visible = false
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Window"]
+initial_position = 1
+size = Vector2i(116, 100)
+dialog_text = "sux 2 suk m8"
+
+[node name="allTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="blue_button" to="." method="_button_pressed" binds= ["blue_button"]]
+[connection signal="pressed" from="green_button" to="." method="_button_pressed" binds= ["green_button"]]
+[connection signal="pressed" from="red_button" to="." method="_button_pressed" binds= ["red_button"]]
+[connection signal="pressed" from="yellow_button" to="." method="_button_pressed" binds= ["yellow_button"]]
+[connection signal="pressed" from="purple_button" to="." method="_button_pressed" binds= ["purple_button"]]
+[connection signal="timeout" from="allTimer" to="." method="_stopglow"]

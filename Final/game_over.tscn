@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://5u1c1ytg5a06"]
+
+[ext_resource type="Script" path="res://GameOver.gd" id="1_1cdnh"]
+[ext_resource type="Texture2D" uid="uid://bdahj8asj4amx" path="res://gameover.PNG" id="2_yx0vf"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1cdnh")
+
+[node name="TryAgain" type="Button" parent="."]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 293.0
+offset_right = 746.0
+offset_bottom = 471.0
+text = "Try Again?"
+
+[node name="Gameover" type="Sprite2D" parent="."]
+position = Vector2(590, 194)
+scale = Vector2(1.68765, 1.90476)
+texture = ExtResource("2_yx0vf")
+
+[connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]
